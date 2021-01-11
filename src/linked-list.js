@@ -17,4 +17,8 @@ export default class LinkedList {
       currentNode.next = newNode;
     }
   }
+  
+  remove(index) {
+    this.head = this.head.next;
+  }
 }
