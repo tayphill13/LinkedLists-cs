@@ -30,4 +30,9 @@ describe('LinkedList', () => {
     linkedListWithNodes.insertLast("new last");
     expect(linkedListWithNodes.head.next.next.next.next.data).toEqual("new last");
   });
+
+  test('it should set a new head if the head is removed', () => {
+    linkedListWithNodes.remove(0);
+    expect(linkedListWithNodes.head.data).toEqual("node2");
+  });
 });
