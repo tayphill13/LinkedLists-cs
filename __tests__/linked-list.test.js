@@ -35,4 +35,13 @@ describe('LinkedList', () => {
     linkedListWithNodes.remove(0);
     expect(linkedListWithNodes.head.data).toEqual("node2");
   });
+
+  test('it should remove a node from the middle', () => {
+    linkedListWithNodes.remove(2);
+    expect(linkedListWithNodes.head.next.next.data).toEqual("node4");
+  });
+
+  test('it should return -1 if the index dos not exist', () => {
+    expect(linkedListWithNodes.remove(9)).toEqual(-1);
+  });
 });

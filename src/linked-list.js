@@ -18,7 +18,23 @@ export default class LinkedList {
     }
   }
   
-  remove(index) {
-    this.head = this.head.next;
+  remove(indexToRemove) {
+    if (indexToRemove === 0) {
+      this.head = this.head.next;
+    } else {
+      let currentNode = this.head;
+      let currentIndex = 0;
+      while ((currentIndex + 1) <= indexToRemove) {
+        if (currentNode.next === null) {
+          return -1;
+        }
+        if ((currentIndex + 1) === indexToRemove) {
+          currentNode.next = currentNode.next.next;
+          break;
+        }
+        currentNode = currentNode.next;
+        currentIndex++;
+      }
+    }
   }
 }
